@@ -1,3 +1,45 @@
+.upload{
+    /* display: flex;  */
+    /* align-items: center; */
+    /* justify-content: center; */
+    text-align: center;
+    /* overflow: scroll; */
+    background: black;
+    padding: 10px;
+    color: white;
+    border-radius: 0.8rem;
+    max-height: 43px;
+    font-size: 0.8rem;
+}
+.img-upload{
+    opacity: 0;
+    position: relative;
+    top: -20px;
+}
+.loading{
+    overflow: hidden;
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    left: 40px;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+}
+.uploads{
+    display: flex;
+    gap:10px;
+    flex-direction: column;
+}
+.upload:hover{
+    /* background:purple; */
+    background-color: #8371fd;
+    cursor: pointer;
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 
 *,

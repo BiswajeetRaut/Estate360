@@ -1,0 +1,326 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,900);
+
+:root {
+  --border-radius-size: 14px;
+  --barbarian: #EC9B3B;
+  --archer: #EE5487;
+  --giant: #F6901A;
+  --goblin: #82BB30;
+  --wizard: #4FACFF;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+.heading2{
+  height: 200px;
+  background: white;
+  width: 75%;
+  border-radius: 15px;
+  box-shadow: 0 0 11px #0000009e;
+  background: #46464678 url(https://images.unsplash.com/photo-1591389703635-e15a07b842d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2833&q=80);
+  background-size: cover;
+  background-blend-mode: darken;
+  transition: all 0.5s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  text-shadow: 0 0 11px black;
+}
+.slide-container {
+  text-align: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 30px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background-color: #77e0ff;
+  flex-direction: column;
+  /* height: 100vh; */
+  overflow: auto;
+}
+
+.wrapper {
+  padding-top: 40px;
+    padding-bottom: 40px;
+    position: absolute;
+    top: 230px;
+    right:40px;
+    left:30px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.wrapper:focus {
+  outline: 0;
+}
+
+.clash-card {
+  width: 300px;
+    display: inline-block;
+    margin: auto;
+    position: relative;
+    text-align: center;
+    box-shadow: 0px 0px 30px -12px black;
+    /* z-index: 9999; */
+    border-radius: 15px;
+    /* background: url((unknown)); */
+    background-image: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80');
+    background-size: cover !important;
+    transition:all 0.5s linear; 
+}
+.clash-card:hover{
+  background: #0000007d url(https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80);
+    background-blend-mode: multiply;
+    background-size: contain;
+    transform: scale(1.04);
+}
+.clash-card__image {
+  position: relative;
+  height: 230px;
+  margin-bottom: 35px;
+  border-top-left-radius: var(--border-radius-size);
+  border-top-right-radius: var(--border-radius-size);
+}
+
+.clash-card__image--barbarian {
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/barbarian-bg.jpg');
+}
+
+.clash-card__image--barbarian img {
+  width: 400px;
+  position: absolute;
+  top: -65px;
+  left: -70px;
+}
+
+.clash-card__image--archer {
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/archer-bg.jpg');
+}
+
+.clash-card__image--archer img {
+  width: 400px;
+  position: absolute;
+  top: -34px;
+  left: -37px;
+}
+
+.clash-card__image--giant {
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/giant-bg.jpg');
+}
+
+.clash-card__image--giant img {
+  width: 340px;
+  position: absolute;
+  top: -30px;
+  left: -25px;
+}
+
+.clash-card__image--goblin {
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/goblin-bg.jpg');
+}
+
+.clash-card__image--goblin img {
+  width: 370px;
+  position: absolute;
+  top: -21px;
+  left: -37px;
+}
+
+.clash-card__image--wizard {
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/wizard-bg.jpg');
+}
+
+.clash-card__image--wizard img {
+  width: 345px;
+  position: absolute;
+  top: -28px;
+  left: -10px;
+}
+
+.clash-card__level {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.clash-card__level--barbarian {
+  color: var(--barbarian);
+}
+
+.clash-card__level--archer {
+  color: var(--archer);
+}
+
+.clash-card__level--giant {
+  color: var(--giant);
+}
+
+.clash-card__level--goblin {
+  color: var(--goblin);
+}
+
+.clash-card__level--wizard {
+  color: var(--wizard);
+}
+
+.clash-card__unit-name {
+  font-size: 26px;
+  color: black;
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+
+.clash-card__unit-description {
+  padding: 20px;
+  /* margin-bottom: 10px; */
+  font-weight: bold;
+  /* text-shadow: 0 0 11px #b6b2b2; */
+  text-shadow: 0 0 11px #000000;
+  color: white;
+}
+.clash-card__unit-description:hover{
+  cursor:pointer;
+}
+.clash-card__unit-stats--barbarian {
+  background: var(--barbarian);
+}
+
+.clash-card__unit-stats--barbarian .one-third {
+  border-right: 1px solid #BD7C2F;
+}
+.one-third:hover{
+cursor:pointer;
+}
+.clash-card__unit-stats--archer {
+  /* background: var(--archer); */
+  background-color: #000000;
+}
+
+.clash-card__unit-stats--archer .one-third {
+  /* border-right: 1px solid #D04976; */
+  border-right: 1px solid white;
+}
+
+.clash-card__unit-stats--giant {
+  background: var(--giant);
+}
+
+.clash-card__unit-stats--giant .one-third {
+  border-right: 1px solid darken(var(--giant), 8%);
+}
+
+.clash-card__unit-stats--goblin {
+  background: var(--goblin);
+}
+
+.clash-card__unit-stats--goblin .one-third {
+  border-right: 1px solid darken(var(--goblin), 6%);
+}
+
+.clash-card__unit-stats--wizard {
+  background: var(--wizard);
+}
+
+.clash-card__unit-stats--wizard .one-third {
+  border-right: 1px solid darken(var(--wizard), 6%);
+}
+
+.clash-card__unit-stats {
+  color: white;
+  font-weight: 700;
+  border-bottom-left-radius: var(--border-radius-size);
+  border-bottom-right-radius: var(--border-radius-size);
+}
+
+.clash-card__unit-stats .one-third {
+  width: 33%;
+  float: left;
+  padding: 20px 15px;
+}
+
+.clash-card__unit-stats sup {
+  position: absolute;
+  bottom: 4px;
+  font-size: 45%;
+  margin-left: 2px;
+}
+
+.clash-card__unit-stats .stat {
+  position: relative;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.clash-card__unit-stats .stat-value {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.clash-card__unit-stats .no-border {
+  border-right: none;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.slick-prev {
+  left: 100px;
+  z-index: 999;
+}
+
+.slick-next {
+  right: 100px;
+  z-index: 999;
+}
+.heading1{
+  display: flex;
+    flex-direction: column;
+    background: white;
+    max-width: 300px;
+    overflow: hidden;
+    padding: 20px;
+    margin: 0px !important;
+    border-radius: 14px;
+    justify-content: center;
+    align-items: flex-start;
+    box-shadow: 0 0 11px #00000091;
+    /* background: url(https://images.unsplash.com/photo-1617150119111-09bbb85178b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80); */
+    /* background: url(https://images.pexels.com/photos/4946723/pexels-photo-4946723.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2); */
+    background: url(https://images.pexels.com/photos/1089462/pexels-photo-1089462.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color:white;
+    min-width:25%;
+}
+.heading1 h2{
+  color:white !important;
+}
+@media (max-width: 530px) {
+  .heading2{
+    display: none;
+  }
+  .main__heading{
+    position: absolute;
+    top:25px;
+    left:auto !important;
+    right: auto !important;
+  }
+}

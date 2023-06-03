@@ -79,10 +79,7 @@ const Signup = () => {
 
   if (!hasFilled) {
     return (
-      <div className='app__container' style={{
-        display:'flex',
-        gap:'10px'
-      }}>
+      <div className='app__container'>
         <Card sx={{ width: '300px' }} style={{
           padding:'10px',
         }}>
