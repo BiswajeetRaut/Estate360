@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { useHistory } from 'react-router-dom';
 import db from '../firebase';
 import { selectOtpVerify } from '../features/user/userSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom/dist';
 const Signin = () => {
-  const history= useHistory();
+  const history= useNavigate();
   const otpVerify = useSelector(selectOtpVerify);
   const [phone, setphone] = useState(otpVerify);
   const [email, setemail] = useState('');
@@ -27,7 +27,7 @@ const Signin = () => {
   'https://images.pexels.com/photos/605494/pexels-photo-605494.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2']
   setInterval(() => {
     try{
-      console.log(document.getElementsByClassName('carousel')[0].style.backgroundImage = 'url(' +imgs[index]+')')
+      console.log(document.getElementsByClassName('carousal')[0].style.backgroundImage = 'url(' +imgs[index]+')')
       index = (index+1)%4;
     }
     catch(e){
@@ -36,7 +36,7 @@ const Signin = () => {
   }, 4000);
     function signup()
     {
-      history.push('/signup');
+      history('/signup');
     }
     function check()
     {
@@ -50,7 +50,7 @@ const Signin = () => {
           email: email,
         }).then(()=>{
           alert('Successfully Signed up. Redirecting you to Login Page please login with your credentials there.');
-          history.push('/login');
+          history('/login');
         }).catch(()=>{
           alert('OOPS! Something went wrong. Please try again');
         })

@@ -4,10 +4,10 @@ import db, { auth, provider } from '../firebase'
 import { useSelector } from 'react-redux'
 import { selectUser } from '../features/user/userSlice'
 import { PropagateLoader } from 'react-spinners'
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom/dist'
 const MyProperties = () => {
   const user = useSelector(selectUser);
-  const history = useHistory();
+  const history = useNavigate();
   const [vals, setvals] = useState([]);
   const [sold,setsold] = useState(0);
   const [current,setcurrent] = useState(0);
@@ -116,7 +116,7 @@ const MyProperties = () => {
         <div class="one-third">
           <div class="stat-value" onClick={()=>{
             var push = '/'+val.id+'/edit';
-            history.push(push);
+            history(push);
           }}>Edit</div>
         </div>
         <div class="one-third no-border">

@@ -2,11 +2,11 @@
 import React from 'react'
 import './Login.css'
 import db, { auth, provider } from '../firebase'
-import { useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import {selectUser,setUserLoginDetails} from '../features/user/userSlice.js';
+import { useNavigate } from 'react-router-dom/dist'
 const Login = () => {
-  const history= useHistory();
+  const history= useNavigate();
   const dispatch = useDispatch();
   var index =0;
   var imgs =['https://images.pexels.com/photos/247599/pexels-photo-247599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
@@ -15,7 +15,7 @@ const Login = () => {
   'https://images.pexels.com/photos/605494/pexels-photo-605494.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2']
   setInterval(() => {
     try{
-      console.log(document.getElementsByClassName('carousel')[0].style.backgroundImage = 'url(' +imgs[index]+')')
+      console.log(document.getElementsByClassName('carousal')[0].style.backgroundImage = 'url(' +imgs[index]+')')
       index = (index+1)%4;
     }
     catch(e){
@@ -24,7 +24,7 @@ const Login = () => {
   }, 4000);
     function signup()
     {
-      history.push('/signup');
+      history('/signup');
     }
     function check()
     {
@@ -47,7 +47,7 @@ const Login = () => {
                   }
                   )
                 )
-                history.push(`/main`);
+                history(`/`);
                 alert('Logged In Re-diricting you to main page');
                 count=0; 
             }
@@ -118,7 +118,7 @@ const Login = () => {
           </form>
         </div>
 
-        <div className="carousel">
+        <div className="carousal">
           <div className="images-wrapper">
           </div>
 

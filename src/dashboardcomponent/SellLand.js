@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import db, { storage } from '../firebase'
-import { LocationCity, MyLocation } from '@material-ui/icons'
+import MyLocationIcon from '@mui/icons-material/MyLocation';
 import './SellLand.css';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../features/user/userSlice';
@@ -176,7 +176,7 @@ const SellLand = () => {
                     setlocation(e.target.value);
                   }}
                 />
-                <MyLocation></MyLocation>
+                <MyLocationIcon></MyLocationIcon>
               </div>
               <div class="input-wrap">
                 <input
@@ -236,7 +236,7 @@ const SellLand = () => {
             </div>
           </form>
         </div>
-        <div className="carousel details_carousel" style={{backgroundColor:`white !important`,}}>
+        <div className="carousal details_carousel" style={{backgroundColor:`white !important`,}}>
           <div className="images-wrapper">
           </div>
         </div>

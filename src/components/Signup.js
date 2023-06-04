@@ -1,17 +1,17 @@
 import React, { useState } from 'react'
 import './Signup.css'
 import db, { auth, provider } from '../firebase'
-import { useHistory } from 'react-router-dom'
 import firebase from 'firebase/app';
 import 'firebase/auth';
-import { Button, Card, CardContent, TextField, Typography } from '@material-ui/core';
+import { Button, Card, CardContent, TextField, Typography } from '@mui/material';
 import { setOtpVerify } from '../features/user/userSlice';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom/dist';
 const Signup = () => {
   const [phone, setPhone] = useState('+91');
   const [hasFilled, setHasFilled] = useState(false);
   const [otp, setOtp] = useState('');
-  const history = useHistory();
+  const history = useNavigate();
   const dispatch = useDispatch();
   const generateRecaptcha = () => {
     window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha', {
@@ -23,30 +23,29 @@ const Signup = () => {
   const handleSend = (event) => {
     event.preventDefault();
     db.collection('Users')
-  .where('phone', '==', phone)
-  .get()
-  .then((querySnapshot) => {
-    if(querySnapshot.size ==0)
-    {
-    setHasFilled(true);
-    generateRecaptcha();
-    let appVerifier = window.recaptchaVerifier;
-    firebase.auth().signInWithPhoneNumber(phone, appVerifier)
-      .then((confirmationResult) => {
-        window.confirmationResult = confirmationResult;
-      }).catch((error) => {
-        console.log(error);
+      .where('phone', '==', phone)
+      .get()
+      .then((querySnapshot) => {
+        if (querySnapshot.size == 0) {
+          setHasFilled(true);
+          generateRecaptcha();
+          let appVerifier = window.recaptchaVerifier;
+          firebase.auth().signInWithPhoneNumber(phone, appVerifier)
+            .then((confirmationResult) => {
+              window.confirmationResult = confirmationResult;
+            }).catch((error) => {
+              console.log(error);
+            });
+        }
+        querySnapshot.forEach((doc) => {
+          console.log(doc.id, ' => ', doc.data());
+          alert('Duplicate');
+          setHasFilled(false);
+        });
+      })
+      .catch((error) => {
+        console.log('Error getting documents: ', error);
       });
-    }
-    querySnapshot.forEach((doc) => {
-      console.log(doc.id, ' => ', doc.data());
-      alert('Duplicate');
-      setHasFilled(false);
-    });
-  })
-  .catch((error) => {
-    console.log('Error getting documents: ', error);
-  });
   }
 
   const verifyOtp = (event) => {
@@ -63,11 +62,11 @@ const Signup = () => {
           console.log(user);
           dispatch(setOtpVerify(
             {
-              number:phone,
+              number: phone,
             }
           ))
           alert('User signed in successfully');
-          history.push('/signin');
+          history('/signin');
           // ...
         }).catch((error) => {
           // User couldn't sign in (bad verification code?)
@@ -81,14 +80,14 @@ const Signup = () => {
     return (
       <div className='app__container'>
         <Card sx={{ width: '300px' }} style={{
-          padding:'10px',
+          padding: '10px',
         }}>
           <CardContent sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
             <Typography sx={{ padding: '20px' }} variant='h5' component='div'>Enter your phone number</Typography>
             <form onSubmit={handleSend} style={{
-              display:'flex',
-              gap:'10px',
-              flexDirection:'column',
+              display: 'flex',
+              gap: '10px',
+              flexDirection: 'column',
             }}>
               <TextField sx={{ width: '240px' }} variant='outlined' autoComplete='off' label='Phone Number' value={phone} onChange={(event) => setPhone(event.target.value)} />
               <Button type='submit' variant='contained' sx={{ width: '240px', marginTop: '20px' }}>Send Code</Button>

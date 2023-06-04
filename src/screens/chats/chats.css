@@ -1,0 +1,143 @@
+.chat-container {
+    display: flex;
+    height: 94vh;
+}
+
+.chat-left {
+    background-color: #88c6f7;
+    flex: 2;
+    display: flex;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.chat-right {
+    flex: 5;
+    border-radius: 0 0 10px 10px;
+    background-color: white;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.people {
+    background: rgba(255, 255, 255, 0.647);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    border: 1px solid rgba(136, 198, 247, 0.3);
+    height: 60px;
+    margin: 4px;
+    width: 95%;
+    border-radius: 10px;
+    border: 1.5px solid #88c6f7;
+    display: flex;
+    align-items: center;
+}
+
+.people-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+
+.chart-search {
+    background-color: #fff;
+    height: 30px;
+    margin: 8px;
+    width: 97%;
+    display: flex;
+    border-radius: 3px;
+    align-items: center;
+    justify-content: center;
+}
+
+.chart-search input {
+    border: none;
+    outline: none;
+}
+
+.chat-top {
+    height: 60px;
+    background-color: #fff;
+    position: relative;
+    width: 94%;
+    border-bottom: 2px solid #88c6f7;
+    display: flex;
+    align-items: center;
+    top: 0;
+}
+
+.chat-bottom {
+    color: #fff;
+    height: 90px;
+    width: 100%;
+    position: sticky;
+    background-color: #151111;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat-messages {
+    height: calc(100% - 150px);
+}
+
+.chat-bottom input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    color: #fff;
+    width: 70%;
+    margin-left: 20px;
+    background-color: transparent;
+    border-bottom: 2px solid #fff;
+}
+
+.chat-bottom input:focus {
+    border: 1px solid #fff;
+    border-radius: 10px;
+
+}
+
+.chat-bottom input::placeholder {
+    color: #ffffff9d;
+}
+
+.chat-bottom img {
+    height: 25px;
+    width: 25px;
+}
+
+.chat-bottom button:hover {
+    transform: scale(1.1);
+    background-color: #88c7f757;
+}
+
+.chat-bottom button {
+    border: 2px solid white;
+    transition: transform 0.1s ease-in;
+    outline: none;
+    background-color: transparent;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 31px;
+}
+.display
+{
+    display: flex;
+    align-items: center;
+}
+.display img{
+    height: 40px;
+    margin-right: 5px;
+}

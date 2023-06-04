@@ -1,0 +1,42 @@
+.list
+{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.listing-heading{
+    width: 75%;
+}
+.listingScreen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.filter
+{
+    display: flex;
+    align-items: center;
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; */
+    justify-content: space-around;
+    width: 95%;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom:10px ;
+}
+.filter input{
+    border: none;
+    outline: none;
+    background-color: white;
+    padding: 7px;
+    text-align: center;
+    width: 115px;
+}
+.cri button{
+    padding: 15px;
+    width: 90px;
+    height: 50px;
+    color: white;
+    border-radius: 15px;
+    background: #151511;
+}

@@ -5,9 +5,9 @@ import { useSelector } from 'react-redux';
 import { selectUser } from '../features/user/userSlice';
 import db from '../firebase';
 import { PropagateLoader } from 'react-spinners';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom/dist';
 const MyWishList = () => {
-  const history = useHistory();
+  const history = useNavigate();
   const [vals, setvals] = useState([]);
   const[lands,setlands]= useState([]);
   const [wish,setwish]= useState(0);
@@ -118,7 +118,7 @@ const MyWishList = () => {
               return;
             }
             var push = '/chats/'+user.id+'/'+val.ownerid;
-            history.push(push);
+            history(push);
           }}
           >Chat</div>
         </div>

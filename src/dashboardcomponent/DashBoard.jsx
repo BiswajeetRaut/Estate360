@@ -7,14 +7,14 @@ import MyProperties from './MyProperties.jsx'
 import MyWishList from './MyWishList'
 import SellLand from './SellLand'
 import { selectUser } from '../features/user/userSlice'
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom/dist'
 const DashBoard = () => {
     const dashboardOption = useSelector(selectdashBoardOption);
     const user = useSelector(selectUser);
-    const history=useHistory();
+    const history=useNavigate();
     if(user == null)
     {
-      history.push('/login');
+      history('/login');
     }
   return (
     <div>

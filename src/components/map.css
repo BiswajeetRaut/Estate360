@@ -1,0 +1,14 @@
+.map-leaflet{
+    height: 100%;
+    width: 540px;
+    background-color: #8371fd;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+@media screen and (max-width:797px){
+
+    .map-leaflet{
+        height: 350px;
+    }
+}

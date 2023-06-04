@@ -1,0 +1,142 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 99.5%;
+    border-radius: 0 0 15px 15px;
+    height: 420px;
+    overflow: hidden;
+    background-image: url("../banner-1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 2px solid #88c6f7;
+    transition: 1s ease-in-out
+}
+
+.home-container img {
+    width: 100%;
+    height: auto;
+    height: 100%;
+}
+
+.landing-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    margin-top: 20px;
+    font-weight: 800;
+    font-size: 5rem;
+    color: white;
+}
+
+.subtitle {
+    color: #ffffff;
+    font-size: 1.4em;
+}
+
+.search {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top: -42px;
+}
+
+.icon-text {
+    display: flex;
+    align-items: center;
+}
+
+.search-button {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    padding: 15px;
+    width: 90px;
+    height: 50px;
+    color: white;
+    border-radius: 15px;
+    background: #151511;
+}
+
+.search-button:hover {
+    background: #8371fd;
+    color: #151111;
+}
+
+.card-listing {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 2rem;
+    width: 75%;
+}
+
+.card-heading a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #151111;
+}
+
+.card-heading a:hover {
+    cursor: pointer;
+}
+
+.card-heading button {
+    padding: 7px;
+    width: 130px;
+    color: white;
+    border: none;
+    height: 35px;
+    background: #151111;
+    border-radius: 15px;
+}
+
+.card-heading button:hover {
+    background: #8371fd;
+    color: #151111;
+
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width:797px) {
+    .search-home {
+        flex-direction: column;
+    }
+
+    .cri {
+        margin: 10px 0;
+    }
+
+    .title {
+        font-size: 3rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .home-container {
+        height: 200px;
+    }
+
+    .card-heading {
+        font-size: 1.2rem;
+    }
+}

@@ -7,16 +7,19 @@
   margin: 0;
   box-sizing: border-box;
 }
-.text-group h2{
-  color:white;
-  text-shadow: 0 0 11px rgba(0, 0, 0,0.5);
+
+.text-group h2 {
+  color: white;
+  text-shadow: 0 0 11px rgba(0, 0, 0, 0.5);
   /* font-size: 50px; */
 }
+
 body,
 input {
   font-family: "Poppins", sans-serif;
 }
-.app_container{
+
+.app_container {
   display: flex;
   gap: 10px;
   position: absolute;
@@ -28,6 +31,7 @@ input {
   justify-content: center;
   background: #88c6f7;
 }
+
 main {
   width: 100%;
   min-height: 100vh;
@@ -83,7 +87,10 @@ form {
   grid-row: 1 / 2;
   transition: opacity 0.02s 0.4s;
 }
+.actual-form{
+  width: 100%;
 
+}
 form.sign-up-form {
   opacity: 0;
   pointer-events: none;
@@ -104,6 +111,11 @@ form.sign-up-form {
   margin-top: -9px;
   letter-spacing: -0.5px;
   color: #151111;
+}
+
+.heading {
+  width: 100%;
+  text-align: center;
 }
 
 .heading h2 {
@@ -166,7 +178,7 @@ label {
   border-bottom-color: #151111;
 }
 
-.input-field.active + label {
+.input-field.active+label {
   font-size: 0.75rem;
   top: -2px;
 }
@@ -221,7 +233,7 @@ main.sign-up-mode .carousel {
   left: 0%;
 }
 
-.carousel {
+.carousal {
   position: absolute;
   height: 100%;
   width: 55%;
@@ -365,7 +377,7 @@ main.sign-up-mode .carousel {
     transform: translateX(0%);
   }
 
-  .carousel {
+  .carousal {
     position: revert;
     height: auto;
     width: 100%;
@@ -399,7 +411,7 @@ main.sign-up-mode .carousel {
     padding: 1rem;
   }
 
-  .carousel {
+  .carousal {
     padding: 1.5rem 1rem;
     border-radius: 1.6rem;
   }

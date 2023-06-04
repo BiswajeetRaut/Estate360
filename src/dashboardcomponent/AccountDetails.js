@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import'./AccountDetails.css'
 import { selectUser, setUserLoginDetails } from '../features/user/userSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import db from '../firebase';
@@ -17,7 +18,7 @@ const AccountDetails = () => {
   'https://images.pexels.com/photos/605494/pexels-photo-605494.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2']
   setInterval(() => {
     try{
-      console.log(document.getElementsByClassName('carousel')[0].style.backgroundImage = 'url(' +imgs[index]+')')
+      console.log(document.getElementsByClassName('carousal')[0].style.backgroundImage = 'url(' +imgs[index]+')')
       index = (index+1)%4;
     }
     catch(e){
@@ -141,7 +142,7 @@ const AccountDetails = () => {
             </div>
           </form>
         </div>
-        <div className="carousel details_carousel" style={{backgroundColor:`white !important`,}}>
+        <div className="carousal details_carousel" style={{backgroundColor:`white !important`,}}>
           <div className="images-wrapper">
           </div>
 

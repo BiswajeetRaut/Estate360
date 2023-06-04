@@ -381,7 +381,7 @@ main.sign-up-mode .carousel {
   left: 0%;
 }
 
-.carousel {
+.carousal {
   position: absolute;
   height: 100%;
   width: 55%;
@@ -520,7 +520,7 @@ main.sign-up-mode .carousel {
     transform: translateX(0%);
   }
 
-  .carousel {
+  .carousal {
     position: revert;
     height: auto;
     width: 100%;
@@ -550,7 +550,7 @@ main.sign-up-mode .carousel {
     padding: 1rem;
   }
 
-  .carousel {
+  .carousal {
     padding: 1.5rem 1rem;
     border-radius: 1.6rem;
   }

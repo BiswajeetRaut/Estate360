@@ -2,3 +2,6 @@
     background: rgba(0,0,0,0.5);
     background-blend-mode: darken;
 }
+.heading {
+    width: 115%;
+}
