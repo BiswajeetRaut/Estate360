@@ -14,6 +14,7 @@ import { selectUser } from '../features/user/userSlice';
 import { useNavigate } from 'react-router-dom';
 const Sidebar = () => {
   const dashboardOption = useSelector(selectdashBoardOption);
+  const history = useNavigate();
   console.log(dashboardOption);
   const dispatch = useDispatch();
   const sidebarToggle = () => {
@@ -25,7 +26,7 @@ const Sidebar = () => {
       dsh: i,
     }))
   }
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const user = useSelector(selectUser);
   return (
     <nav className="sidebar close" id="sidebar">
@@ -153,7 +154,7 @@ const Sidebar = () => {
           <li
             className="search-box"
             onClick={() => {
-              navigate('/listing')
+              navigate('/')
             }}
           >
             <ArrowBackIosIcon
@@ -162,7 +163,9 @@ const Sidebar = () => {
               id="addChat"
             >
             </ArrowBackIosIcon>
-            <div className="text">Go to Buyer's Page</div>
+            <div className="text" onClick={()=>{
+              history('/');
+            }}>Go to Buyer's Page</div>
           </li>
 
         </div>

@@ -8,8 +8,10 @@ const Listing = () => {
     const [land, setLand] = useState([])
     useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-        db.collection('Lands').get().then((snapshot) => {
-            const dbData = [];
+        db.collection('Lands').orderBy('popularity','desc')
+        .get().then((snapshot) => {
+        console.log(snapshot);
+            var dbData = [];
             snapshot.forEach((doc) => {
                 const dat = doc.data()
                 dat['landId'] = doc.id

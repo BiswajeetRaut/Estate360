@@ -64,7 +64,7 @@ const MyProperties = () => {
   }, [change,])
   return (
   <div class="slide-container">
-  <div className="heading main__heading" style={{position:`absolute`,top:`25px`, left:`30px`, right:`20px`, display:`flex`,maxHeight:`200px`,gap:`30px`}}>
+  <div className="heading main__heading" style={{position:`absolute`,top:`25px`, left:`auto`, right:`auto`, display:`flex`,maxHeight:`200px`,gap:`30px`,maxWidth:`80%`}}>
   <div className="heading1"><h2>My Properties</h2>
   <span>Total Listings: {sold+current}</span>
   <span>Sold: {sold}</span>

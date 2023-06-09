@@ -1,0 +1,29 @@
+.pano{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: lightskyblue;
+    gap: 20px;
+}
+.pano__img{
+    width: 400px;
+    height: 400px;
+    background: rgb(0, 0, 0);
+}
+.button{
+    padding: 10px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border:none;
+    border-radius: 15px;
+    margin-top: 20px;
+}

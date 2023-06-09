@@ -324,3 +324,14 @@ cursor:pointer;
     right: auto !important;
   }
 }
+
+.main__heading{
+    position: absolute;
+    top: 25px;
+    left: auto;
+    right: auto;
+    display: flex;
+    max-height: 200px;
+    gap: 30px;
+    max-width: 80%;
+}

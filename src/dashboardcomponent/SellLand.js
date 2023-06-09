@@ -54,7 +54,7 @@ const SellLand = () => {
       image.onload = function () {
         const width = image.width;
         const height = image.height;
-        if(width/height >2)
+        if(width/height >1.2)
         {
           // var files = Array.from()
           setpanorma([file]);
@@ -77,7 +77,7 @@ const SellLand = () => {
     return true;
   }
   const UploadDetails = ()=>{
-    if(check())
+    if(!(location==''||area==''||price==''||description==''||panorma.length==0||img.length==0))
     {
       setloading(true);
       const imageUrls = [];
@@ -116,6 +116,7 @@ const SellLand = () => {
           ownerid:user.id,
           timestamp:firebase.firestore.FieldValue.serverTimestamp(),
           status:"current",
+          popularity:0,
         }).then((docRef)=>{
           console.log(docRef.id);
           alert("Uploaded Succesfully.")

@@ -62,7 +62,7 @@ const MyWishList = () => {
     }, 4000);
   return (
     <div class="slide-container">
-  <div className="heading main__heading" style={{position:`absolute`,top:`25px`, left:`30px`, right:`20px`, display:`flex`,maxHeight:`200px`,gap:`30px`}}>
+  <div className="heading main__heading" style={{position:`absolute`,top:`25px`, left:`auto`, right:`auto`, display:`flex`,maxHeight:`200px`,gap:`30px`}}>
   <div className="heading1" style={{alignItems:`center`}}>
   <h2>My Wishlist</h2>
   <span>You have wishlisted <h3>

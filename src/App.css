@@ -1,34 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 .App {
   font-family: 'Poppins', sans-serif;
   background-color: #88c6f7;
 }
-/* body{
-  --chat-color:#3f0f40;
-  /* overflow:hidden; */
-/* }  */
-/* .app_body{
-  display:flex;
-  height:100vh;
-}
-.page{
-  position: absolute;
-  top:0;
-  bottom:0;
-  left:0;
-  right:0;
-  height:100vh;
-  width:100vw;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-}
-.option{
-  display: flex;
-
-}
-.option div{
-  margin-left: 10px;
-} */

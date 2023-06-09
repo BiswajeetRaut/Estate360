@@ -4,8 +4,9 @@ import Card from '../components/Card';
 import db from '../firebase'
 import { useNavigate } from 'react-router-dom';
 import Search from '../components/Search';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 const Home = () => {
-    
     const [land, setLand] = useState([])
     const navigate = useNavigate()
     var index = 0;
@@ -46,6 +47,7 @@ const Home = () => {
     // };
     return (
         <div className="landing-home">
+            <Header/>
             <div className='home-container' >
                 {/* <img src={homebg} alt="" /> */}
                 <span className="title">Estate360:</span>
@@ -55,7 +57,7 @@ const Home = () => {
                 <Search />
             </div>
             <div className="card-heading"><strong>Popular Properties</strong>
-                <a href='#' onClick={() => navigate('/listing')}>View All →</a>
+                <a onClick={() => navigate('/listing')}>View All →</a>
             </div>
             <div className="card-listing">
                 {
@@ -63,6 +65,7 @@ const Home = () => {
                 }
 
             </div>
+            <Footer/>
         </div>
     )
 }
