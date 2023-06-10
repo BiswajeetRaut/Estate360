@@ -17,7 +17,7 @@ const Signin = () => {
       console.log('Verified',otpVerify);
     }
     else{
-      history.push('/signup');
+      history('/signup');
     }
   }, []);
   var index =0;

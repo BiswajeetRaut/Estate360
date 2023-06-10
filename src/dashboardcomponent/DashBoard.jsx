@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Sidebar from './Sidebar'
 import { useSelector } from 'react-redux'
 import { selectdashBoardOption } from '../features/dashboard/dashboardSlice'
@@ -12,10 +12,13 @@ const DashBoard = () => {
     const dashboardOption = useSelector(selectdashBoardOption);
     const user = useSelector(selectUser);
     const history=useNavigate();
-    if(user == null)
+    console.log(user);
+    useEffect(() => {
+      if(user == null)
     {
       history('/login');
     }
+    }, [user,])
   return (
     <div>
       <Sidebar></Sidebar>

@@ -16,6 +16,7 @@ import SellLand from './dashboardcomponent/SellLand';
 import { useSelector } from 'react-redux';
 import PropertyEdit from './dashboardcomponent/PropertyEdit';
 import Pano from './screens/Pano';
+import Tutorial from './dashboardcomponent/Tutorial';
 function App() {
   const user = useSelector(selectUser)
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="/dashboard" element={<DashBoard></DashBoard>}></Route>
           <Route path="/:landid/view" element={<DashBoard></DashBoard>}></Route>
           <Route path="/:landid/edit" element={<PropertyEdit></PropertyEdit>}></Route>
+          <Route path="/:landtutorial" element={<Tutorial/>}></Route>
           <Route path="/:id/pano" element={
             <Pano></Pano>
           }></Route>

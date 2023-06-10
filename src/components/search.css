@@ -51,3 +51,6 @@ form{
         margin: 10px 0;
     }
 }
+.search-button{
+    border:none;
+}

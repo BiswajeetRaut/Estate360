@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './search.css'
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -8,18 +8,33 @@ import Divider from '@mui/material/Divider';
 import { ImLocation2 } from "react-icons/im";
 import { AiFillDollarCircle } from "react-icons/ai"
 import { useNavigate } from 'react-router-dom';
+import db from '../firebase';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectSearchValues, setSearchValues } from '../features/dashboard/dashboardSlice';
 const Search = (props) => {
-  const { selectPosition, setSelectPosition } = props;
-  const [listPlace, setListPlace] = useState();
-  const [place, setPlace] = useState();
-  const NOMINATIM_BASE_URL = "https://nominatim.openstreetmap.org/search?";
-  const params = {
-    q: "",
-    format: "json",
-    addressdetails: "addressdetails",
-  };
-  const navigate = useNavigate()
-  console.log(listPlace)
+  const [listPlace, setListPlace] = useState([]);
+  const [allplace,setallplace] = useState([]);
+  const search = useSelector(selectSearchValues);
+  const [place, setPlace] = useState(search.place==undefined ? "" : search.place);
+  const [min,setmin]=useState(search.min==undefined ? 0: search.min);
+  const [max,setmax]=useState(search.max==undefined ? 0: search.max);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  console.log(listPlace);
+  useEffect(() => {
+    db.collection('Lands').onSnapshot(snapshot=>{
+      var documents = [];
+      snapshot.docs.map((doc)=>{    
+        documents.push(doc.data().location);
+      })
+      setallplace(documents);
+    })
+  }, []);
+  useEffect(()=>{
+    setPlace(search.place);
+    setmin(search.min);
+    setmax(search.max);
+  },[search])
   return (
     <div className='search-cont'>
       <div className='search-home'>
@@ -27,44 +42,45 @@ const Search = (props) => {
           <div className="cri">
             <div className="icon-text"><ImLocation2 /> <span> Location</span> <br /></div>
             <input type="text" placeholder='enter location' value={place} required
-              onChange={(event) => {
-                setPlace(event.target.value)
-                const params = {
-                  q: event.target.value,
-                  format: "json",
-                  addressdetails: 1,
-                  polygon_geojson: 0,
-                };
-                const queryString = new URLSearchParams(params).toString();
-                const requestOptions = {
-                  method: "GET",
-                  redirect: "follow",
-                };
-                fetch(`${NOMINATIM_BASE_URL}${queryString}`, requestOptions)
-                  .then((response) => response.text())
-                  .then((result) => {
-                    setListPlace(JSON.parse(result));
-                  })
-                  .catch((err) => console.log("err: ", err));
-              }}
+            onChange={(e)=>{
+              setPlace(e.target.value);
+              setListPlace(allplace.filter((item)=>{
+                if(item.includes(e.target.value))
+                {
+                  return item;
+                }
+              }))
+            }}
             />
           </div>
           <div className="cri">
             <div className="icon-text"><AiFillDollarCircle /><span>Max Price</span><br /></div>
-            <input type="number" name="" id="" placeholder='max price' />
+            <input type="number" name="" id="" placeholder='max price' value={max} onChange={(e)=>{
+              setmax(e.target.value);
+            }}/>
           </div>
           <div className="cri">
             <div className="icon-text"><AiFillDollarCircle /><span>Min Price</span><br /></div>
-            <input type="number" name="" id="" placeholder='min price' />
+            <input type="number" name="" id="" placeholder='min price' value={min} onChange={(e)=>{
+              setmin(e.target.value);
+            }}/>
           </div>
         <button className='search-button' type='submit' onClick={() => {
-          navigate('/listing')
+          navigate('/listing');
+          dispatch(
+                  setSearchValues({
+                    search:{
+                      place: place,
+                      min: min,
+                      max: max
+                    }
+                  })
+                )
         }}>Search</button>
       </div>
-      <div className='search-result'>
+      {listPlace.length!=0 && <div className='search-result'>
         <List component="nav" aria-label="main mailbox folders"
           sx={{
-            // overflowY:'scroll',
             zIndex: '10',
             position: 'absolute',
             left: '25%',
@@ -76,24 +92,23 @@ const Search = (props) => {
             borderRadius: ' 15px',
           }}
         >
-          {listPlace && listPlace.map((item) => {
+          {listPlace.length!=0 && listPlace.map((item,index) => {
             return (
-              <div key={item?.place_id}>
+              <div key={index}>
                 <ListItem
                   onClick={() => {
-                    setSelectPosition(item);
-                    setListPlace(null)
-                    setPlace(item?.display_name)
+                    setListPlace([])
+                    setPlace(item)
                   }}
                 >
-                  <ListItemText primary={item?.display_name} />
+                  <ListItemText primary={item} />
                 </ListItem>
                 <Divider />
               </div>
             );
           })}
         </List>
-      </div>
+      </div>}
     </div>
   )
 }

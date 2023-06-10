@@ -112,7 +112,7 @@ const ListingDetails = () => {
                     <button onClick={() => history(`/chats/${landDetails.ownerid}`)}>Messege the Owner</button>
                 </div>
                 <div className="map">
-                    <Map />
+                    {landDetails.lat ==undefined ?(<></>) : <Map latitude={landDetails.lat} longitude={landDetails.lng} term={false}/>}
                 </div>
             </div>
         </div>

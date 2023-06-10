@@ -373,9 +373,10 @@ main.sign-up-mode .carousal {
 
 @media (max-width: 850px) {
   .box {
-    height: auto;
+    /* height: auto; */
     max-width: 550px;
-    overflow: hidden;
+    flex-direction: column;
+    height: max-content;
   }
 
   .inner-box {
@@ -467,4 +468,8 @@ main.sign-up-mode .carousal {
     display: flex;
     max-width: 300px;
   }
+}
+.map{
+  width:50%;
+  height:90%;
 }
