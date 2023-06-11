@@ -111,7 +111,10 @@ const MyProperties = () => {
       </div>
       <div class="clash-card__unit-stats clash-card__unit-stats--archer clearfix">
         <div class="one-third">
-          <div class="stat-value">View</div>
+          <div class="stat-value" onClick={()=>{
+            var push = '/listDetails/'+val.id;
+            history(push);
+          }}>View</div>
         </div>
         <div class="one-third">
           <div class="stat-value" onClick={()=>{

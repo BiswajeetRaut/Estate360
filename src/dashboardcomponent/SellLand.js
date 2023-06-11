@@ -170,6 +170,9 @@ const SellLand = () => {
     top: `2px`,
     textDecoration: `underline`,
     cursor:`pointer`,
+    cursor: `pointer`,
+    zIndex: `100`,
+    textShadow: `0 0 11px #0000008f`,
     }}
     >Click here to know - How to Sell a Land</a>
     {loading==true?(<div className="loading"><PropagateLoader color='white'>
@@ -214,8 +217,44 @@ const SellLand = () => {
                     setlocation(e.target.value);
                   }
                   }
+              
                 />
-                <MyLocationIcon></MyLocationIcon>
+                <MyLocationIcon onClick={()=>{
+                  navigator.geolocation.getCurrentPosition(async(pos)=>{
+                  console.log(pos.coords.latitude, pos.coords.longitude);
+                  console.log(pos.coords.accuracy);
+                  const options = {
+  method: 'GET',
+  url: 'https://trueway-geocoding.p.rapidapi.com/ReverseGeocode',
+  params: {
+    location: `${pos.coords.latitude},${pos.coords.longitude}`,
+    language: 'en'
+  },
+  headers: {
+    'X-RapidAPI-Key': '3a2c9f5e70msh4fd22237ba94150p1b8d77jsn9bed91208b46',
+    'X-RapidAPI-Host': 'trueway-geocoding.p.rapidapi.com'
+  }
+};
+
+try {
+	const response = await axios.request(options);
+	console.log(response.data);
+  var con= window.confirm('Your Current Address Detected is: '+response.data.results[0].address);
+  if(con)
+  {
+    setlocation(response.data.results[0].address);
+    setlat(pos.coords.latitude);
+    setlng(pos.coords.longitude);
+  }
+} catch (error) {
+	console.error(error);
+}
+                },(e)=>{
+                    console.log(e);
+                });
+                
+                }}
+                style={{zIndex:`100`}}></MyLocationIcon>
               </div>
               <div class="input-wrap">
                 <input

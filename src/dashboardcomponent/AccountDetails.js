@@ -145,16 +145,6 @@ const AccountDetails = () => {
         <div className="carousal details_carousel" style={{backgroundColor:`white !important`,}}>
           <div className="images-wrapper">
           </div>
-
-          {/* <div class="text-slider">
-            <div class="text-wrap">
-              <div class="text-group">
-                <h2>Estate360</h2>
-                <p>Elevate Your Real Estate Experience with Estate 360: Discover, Connect, and Transform the Way You Engage with Properties.</p>
-              </div>
-            </div>
-          </div> */}
-            
         </div>
       </div>
     </div>

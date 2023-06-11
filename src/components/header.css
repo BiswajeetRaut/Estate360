@@ -35,7 +35,16 @@
     justify-content: center;
     background: transparent;
     border: none;
+    transition: -webkit-transform 0.2s ease-in;
     transition: transform 0.2s ease-in;
+    transition: transform 0.2s ease-in, -webkit-transform 0.2s ease-in;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+    font-size: 15px;
     
 }
 

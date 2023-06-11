@@ -21,7 +21,7 @@ const Listing = () => {
         console.log(snapshot);
             var dbData = [];
             snapshot.forEach((doc) => {
-                if(doc.data().location.includes(search.place) && doc.data().price>=search.min && doc.data().price<=search.max)
+                if(doc.data().location.includes(search.place) && (doc.data().price>=search.min) && (search.max ==0 || doc.data().price<=search.max))
                 {
                     const dat = doc.data()
                     dat['landId'] = doc.id

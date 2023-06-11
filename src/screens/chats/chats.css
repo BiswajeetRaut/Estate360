@@ -82,10 +82,11 @@
     flex-direction: row;
     margin: 2px;
     width: 100%;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     max-width: none;
     border-radius: 10px;
+    background: black;
 }
 
 .inp {
@@ -133,6 +134,8 @@
     color: #fff;
     margin-left: 20px;
     background-color: transparent;
+    width: 80%;
+    border-bottom: 1px solid white;
 }
 
 

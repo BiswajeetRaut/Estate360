@@ -13,7 +13,7 @@ const Chat = () => {
   const [people, setPeople] = useState([]);
   const [change,setchange] = useState(false);
   const [roomId, setRoomId] = React.useState('');
-  const [selectedPerson, setSelectedPerson] = React.useState();
+  const [selectedPerson, setSelectedPerson] = useState();
   const [message, setMessage] = React.useState([]);
   const user = useSelector(selectUser);
   var { receiverId } = useParams()
@@ -73,12 +73,11 @@ const Chat = () => {
   useEffect(() => {
     if (receiverId != 0) { newPeople() }
     getPeople();
-  }, [change,])
+  }, [])
   console.log(people)
   return (
     (
       <>
-
         <Header></Header>
       <div className='chat-container'>
           {/* <div className="people-container">

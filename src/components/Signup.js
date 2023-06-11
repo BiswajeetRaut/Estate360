@@ -38,7 +38,7 @@ const Signup = () => {
             });
         }
         querySnapshot.forEach((doc) => {
-          console.log(doc.id, ' => ', doc.data());
+          // console.log(doc.id, ' => ', doc.data());
           alert('Duplicate');
           setHasFilled(false);
         });
@@ -59,7 +59,7 @@ const Signup = () => {
         .then((result) => {
           // User signed in successfully.
           let user = result.user;
-          console.log(user);
+          // console.log(user);
           dispatch(setOtpVerify(
             {
               number: phone,

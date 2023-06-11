@@ -10,8 +10,10 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    border: 2px solid #88c6f7;
-    transition: 1s ease-in-out
+    /* border: 2px solid #88c6f7; */
+    transition: 1s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.73) 0px 6px 20px;
+    
 }
 
 .home-container img {

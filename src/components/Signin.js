@@ -3,6 +3,7 @@ import db from '../firebase';
 import { selectOtpVerify } from '../features/user/userSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom/dist';
+import './Signup.css'
 const Signin = () => {
   const history= useNavigate();
   const otpVerify = useSelector(selectOtpVerify);
@@ -14,7 +15,7 @@ const Signin = () => {
   const [address, setaddress] = useState('');
   useEffect(() => {
     if(otpVerify){
-      console.log('Verified',otpVerify);
+      // console.log('Verified',otpVerify);
     }
     else{
       history('/signup');
@@ -27,7 +28,7 @@ const Signin = () => {
   'https://images.pexels.com/photos/605494/pexels-photo-605494.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2']
   setInterval(() => {
     try{
-      console.log(document.getElementsByClassName('carousal')[0].style.backgroundImage = 'url(' +imgs[index]+')')
+      console.log(document.getElementsByClassName('mapa__imgs')[0].style.backgroundImage = 'url(' +imgs[index]+')')
       index = (index+1)%4;
     }
     catch(e){
@@ -38,7 +39,7 @@ const Signin = () => {
     {
       history('/signup');
     }
-    function check()
+    function check1()
     {
       if(name.trim().length!=0 && password.trim().length!=0 && email.trim().length!=0 && address.trim().length!=0)
       {
@@ -74,7 +75,9 @@ const Signin = () => {
     }
   return (
     <main>
-    <div className="box">
+    <div className="box" style={{display: `flex`,
+    alignItems: `center`,
+    justifyContent: `flex-end`,}}>
     <div className="inner-box">
       <div className="forms-wrap">
       <form autocomplete="off" class="sign-in-form" onSubmit={(e)=>{
@@ -127,25 +130,23 @@ const Signin = () => {
             />          
           </div>
           <input type="submit" value="Show Password" class="sign-btn show" onClick={showpass}/>
-              <input type="submit" value="Log In" class="sign-btn" onClick={check}/>
+              <input type="submit" value="Log In" class="sign-btn" onClick={check1}/>
           </div>
         </form>
         </div>
-      <div className="carousel">
-          <div className="images-wrapper">
-          </div>
-
-          <div class="text-slider">
-            <div class="text-wrap">
-              <div class="text-group">
-                <h2>Estate360</h2>
-                <p>Elevate Your Real Estate Experience with Estate 360: Discover, Connect, and Transform the Way You Engage with Properties.</p>
-              </div>
-            </div>
-          </div>
-            
-        </div>
       </div>
+        <div className="map mapa" style={{display: `flex`,
+    alignItems: `center`,
+    justifyContent: `center`,
+    height:`90%`,
+    }}>
+        <div className="mapa__imgs" style={{          
+    height: `90%`,
+    width: `90%`,
+    backgroundSize: `cover`,
+    borderRadius: `20px`,
+        }}></div>
+        </div>                  
   </div>
   </main>
   )

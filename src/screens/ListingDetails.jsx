@@ -20,7 +20,6 @@ const ListingDetails = () => {
           .doc(id)
           .get()
           .then((doc) => {
-            // console.log(doc)
             if (doc.exists) {
                 setDetails(doc.data());
                 if(doc.data().images.length==0)
@@ -35,11 +34,11 @@ const ListingDetails = () => {
                     setimgs(doc.data().images);
                 }
             } else {
-              console.log("no such document in firebase 🔥");
+            //   console.log("no such document in firebase 🔥");
             }
           })
           .catch((error) => {
-            console.log("Error getting document:", error);
+            // console.log("Error getting document:", error);
           });
       }, [id]);
       console.log(landDetails);
@@ -109,7 +108,13 @@ const ListingDetails = () => {
                         })
                         .catch((err)=>{})
                     }}>Add To Wishlist</button>
-                    <button onClick={() => history(`/chats/${landDetails.ownerid}`)}>Messege the Owner</button>
+                    <button onClick={() =>{
+                         if(landDetails.ownerid==user.id)
+                         {
+                            alert('This land is listed by you. You cannot chat with yourself');
+                            return;
+                         }
+                         history(`/chats/${landDetails.ownerid}`)}}>Messege the Owner</button>
                 </div>
                 <div className="map">
                     {landDetails.lat ==undefined ?(<></>) : <Map latitude={landDetails.lat} longitude={landDetails.lng} term={false}/>}

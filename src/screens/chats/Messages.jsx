@@ -63,19 +63,17 @@ const Messages = ({ selectedPerson, change, setchange }) => {
                     );
                 })}
             </div>
-            <form className="chat-bottom" onSubmit={(e)=>e.preventDefault()}>
-                <div className="inp">
+            <div className="chat-bottom">
                 <input
                     type="text"
                     placeholder="Type a message..."
                     onChange={(e) => setMessage(e.target.value)}
                     value={message}
-                    />
-                    </div>
+                />
                 <button onClick={sendMessages}>
                     <img src={send} alt="" />
                 </button>
-            </form>
+            </div>
         </>
     );
 };

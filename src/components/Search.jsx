@@ -20,7 +20,7 @@ const Search = (props) => {
   const [max,setmax]=useState(search.max==undefined ? 0: search.max);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  console.log(listPlace);
+  // console.log(listPlace);
   useEffect(() => {
     db.collection('Lands').onSnapshot(snapshot=>{
       var documents = [];
