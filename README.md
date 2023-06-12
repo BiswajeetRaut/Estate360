@@ -1,68 +1,59 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Estate360
 
-## Available Scripts
+Welcome to Estate360, an innovative and immersive land marketplace that redefines the real estate experience. With cutting-edge features and seamless functionality, Estate360 empowers users to engage in buying and selling properties like never before.
 
-In the project directory, you can run:
+## Features
 
-### `yarn start`
+- **Seller Dashboard**: Effortlessly manage your properties and track sales progress through our intuitive and user-friendly dashboard. Stay organized, update property details, and monitor inquiries all in one place.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **360-Degree View**: Immerse yourself in stunning 360-degree visuals, exploring every detail of the land and gaining a comprehensive understanding of its potential. Take virtual tours, inspect the surroundings, and make informed decisions without leaving your screen.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- **Private Chat Window**: Foster personalized and confidential communication between sellers and buyers, enabling smooth negotiations and building strong connections. Discuss deals, negotiate terms, and clarify doubts in a secure and convenient chat environment.
 
-### `yarn test`
+- **Integrated Maps**: Gain valuable insights and make informed decisions with our integrated maps, providing a holistic view of the property's location, amenities, and nearby landmarks. Explore the neighborhood, assess accessibility, and discover the potential of the land.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Secure Phone Authentication**: Ensure the utmost security of your account and information through OTP-based phone authentication, instilling trust and confidence in all users. Protect your data, prevent unauthorized access, and enjoy a safe and reliable platform.
 
-### `yarn build`
+## Technologies Used
+Estate360 was developed using the following technologies and resources:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- React (https://reactjs.org/): A JavaScript library for building user interfaces.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- Redux (https://redux.js.org/): A predictable state container for JavaScript applications.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Firebase (https://firebase.google.com/): A cloud-based platform for building web and mobile applications. It provides authentication, real-time database, and hosting services.
 
-### `yarn eject`
+- External API: An API that powers detecting the Lattitude and Longitude from the Address given
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- OpenStreetMap (https://www.openstreetmap.org/): OpenStreetMap is a collaborative mapping project that aims to create a free and editable map of the world, built by a global community of contributors.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Pannellum (https://pannellum.org/): Pannellum is a lightweight, free, and open source panorama viewer for the web. Built using HTML5, CSS3, JavaScript, and WebGL, it is plug-in free. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Installation
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. Clone the repository:
+git clone https://github.com/your-username/estate360.git
 
-## Learn More
+2. Navigate to the project directory:
+cd estate360
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Install dependencies:
+yarn install or npm install
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. Start the application:
+yarn start
 
-### Code Splitting
+Note: Ensure that you have changed the firebase.json file with your own credentials and have setup phone authentication in firebase.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Contributing
 
-### Analyzing the Bundle Size
+We warmly welcome contributions from the open-source community to enhance Estate360. Whether you're a developer, designer, or real estate enthusiast, there are various ways to get involved and make a difference. 
+Please refer to our [contribution guidelines](CONTRIBUTING.md) for details on how to contribute.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Contributors
 
-### Making a Progressive Web App
+This project was developed by:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+- [Biswajeet Raut](https://github.com/BiswajeetRaut)
 
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- [Rohit Sahu](https://github.com/rohit0796)
